@@ -3,11 +3,12 @@ import { LuEar } from "react-icons/lu";
 import { AiOutlineProfile } from "react-icons/ai";
 import { IoMdSettings } from "react-icons/io";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const Footer = () => {
   return (
     <div className="bg-violet-500 w-screen">
       <div className="container mx-auto flex justify-between px-10 py-2 text-white bg-opacity-40">
-        <Link to="/" className="flex flex-col items-center">
+        <Link to="/testing" className="flex flex-col items-center">
           <LuEar size={28} />
           <h1 className="my-1">Testing</h1>
         </Link>

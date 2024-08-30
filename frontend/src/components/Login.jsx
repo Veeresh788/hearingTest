@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setAuthUser } from "../redux/userSlice";
 
 
 const Login = () => {
@@ -11,7 +13,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ const Login = () => {
       if (res.data.success) {
         navigate("/testing");
         toast.success(res.data.message);
-        //dispatch(setAuthUser(res.data.user));
+        dispatch(setAuthUser(res.data.user));
         console.log(res.data.user);
       }
     } catch (error) {
@@ -67,7 +69,7 @@ const Login = () => {
 
           <div className="flex justify-center">
             <button className=" px-4 py-2 bg-blue-300 border-y-8 rounded-lg">
-              Signup
+              Login
             </button>
           </div>
         </form>
